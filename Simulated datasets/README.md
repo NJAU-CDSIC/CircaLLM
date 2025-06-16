@@ -55,3 +55,7 @@ Each dataset consists of three time-series files in the following structure:
 │ │ └── TEST.ts
 │
 └── ... # (18 Dataset total)
+
+## Data Availability:
+Due to file size limitations, the datasets are hosted on figshare and can be accessed via the following link:
+[https://figshare.com/s/625915ef49abac604d76](https://figshare.com/s/625915ef49abac604d76)
