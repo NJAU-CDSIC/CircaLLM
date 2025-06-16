@@ -1,0 +1,73 @@
+# CircaLLM: Time series large language model for circadian rhythm analysis
+
+This repository contains the complete implementation of CircaLLM, a novel framework for circadian rhythm analysis using large language models, along with both synthetic and real biological datasets.
+
+---
+
+The folders in the CircaLLM repository:
+
+- **CircaLLM_codes**: Source code for CircaLLM model.
+  
+  - models: Core model implementations
+  
+  - data_provider: Data loading and preprocessing modules
+  
+  - layers: Custom neural network components
+  
+  - utils: Support utilities and tools
+
+  - pretrained: Contains pre-trained model checkpoints [Empty in GitHub - download from figshare]
+
+  - assets: Stores experimental results [Empty in GitHub - download from figshare]
+
+- **Simulated datasets**: Artificially generated time-series data
+  - 18 specialized datasets (SynthDST-1 to SynthDST-18) for two primary tasks:
+    - **Circadian Oscillation**: 10 datasets (SynthDST-1 to SynthDST-10)
+    - **Differential Rhythmicity**: 8 datasets (SynthDST-11 to SynthDST-18)
+  - Readme.md: Dataset documentation
+
+- **Real datasets**: Circadian rhythm-related transcriptome dataset
+  - Two comprehensive biological datasets:
+    - **RealDST1**: 38 sub-datasets with 480,983 genes
+    - **RealDST2**: 19 sub-datasets with 108,835 genes
+  - Readme.md: Dataset documentation
+
+---
+
+## **Step-by-step Running:**
+
+## 1. Installation
+
+```bash
+git clone https://github.com/NJAU-CDSIC/CircaLLM.git
+cd CircaLLM
+```
+
+## 2. Environment Installation
+
+It is recommended to use the conda environment (python 3.11), mainly installing the following dependencies:
+
+```bash
+conda env create -n circallm python==3.11
+conda activate circallm
+pip install -r requirements.txt
+```
+
+See requirements.txt for details.
+
+## 3. Datasets and model parameters
+
+To ensure repository stability and comply with platform size limitations, critical components of CircaLLM are hosted externally on figshare. **Full functionality requires downloading these resources separately**:
+
+### 🔗 Essential Figshare Resources
+
+| Resource Category | Figshare Access | Required For |
+|:-----------------:|:---------------:|:------------:|
+| **Pre-trained Models** | [Download Link](https://figshare.com/s/625915ef49abac604d76) | Model inference, Transfer learning |
+| **Visual Assets** | [Download Link](https://figshare.com/s/625915ef49abac604d76) | Training curves, Result visualizations |
+| **Simulated Datasets** | [Download Link](https://figshare.com/s/625915ef49abac604d76) | Model training, Method validation |
+| **Real Datasets** | [Download Link](https://figshare.com/s/625915ef49abac604d76) |  Method validation |
+
+## 4.  Execute the code cell by cell in the Python interactive window
+  
+run Example.ipynb with Jupyter code cells
