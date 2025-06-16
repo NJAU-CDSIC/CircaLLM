@@ -31,6 +31,9 @@ The folders in the CircaLLM repository:
     - **RealDST1**: 38 sub-datasets with 480,983 genes
     - **RealDST2**: 19 sub-datasets with 108,835 genes
   - Readme.md: Dataset documentation
+ 
+- **Datasets for Case study**: Curated real-world time-course datasets for in-depth biological analysis  
+  - Contains 15 specialized case studies across diverse biological contexts:
 
 ---
 
