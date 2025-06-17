@@ -1,4 +1,4 @@
-# CircaLLM: Time series large language model for circadian rhythm analysis
+# CircaLLM: a foundation model for circadian pattern analysis of gene expression
 
 This repository contains the complete implementation of CircaLLM, a novel framework for circadian rhythm analysis using large language models, along with both synthetic and real biological datasets.
 
