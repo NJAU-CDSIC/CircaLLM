@@ -33,7 +33,29 @@ The folders in the CircaLLM repository:
   - Readme.md: Dataset documentation
  
 - **Datasets for Case study**: Curated real-world time-course datasets for in-depth biological analysis  
-  - Contains 15 specialized case studies across diverse biological contexts:
+  - Contains 15 specialized case studies across diverse biological contexts
+ 
+- **SOTA**: 10 models used in the comparative study:
+
+  - BIOCYCLE: <http://circadiomics.igb.uci.edu/biocycle>
+
+  - JTK_CYCLE: <https://CRAN.R-project.org/package=MetaCycle>
+
+  - Cosiner: <https://CRAN.R-project.org/package=cosinor>
+
+  - ARSER: <https://CRAN.R-project.org/package=MetaCycle>
+
+  - MetaCycle: <https://CRAN.R-project.org/package=MetaCycle>
+
+  - CircaCompare: <https://CRAN.R-project.org/package=circacompare>
+
+  - diffCircadian: <https://github.com/diffCircadian/diffCircadian>
+
+  - LimoRhyde: <https://CRAN.R-project.org/package=limorhyde>
+
+  - HANOVA: <https://CRAN.R-project.org/package=DODR>
+
+  - robust DODR: <https://CRAN.R-project.org/package=DODR>
 
 ---
 
