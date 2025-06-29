@@ -95,4 +95,6 @@ To ensure repository stability and comply with platform size limitations, critic
 
 ## 4.  Execute the code cell by cell in the Python interactive window
   
-run Example.ipynb with Jupyter code cells
+Run the Jupyter notebook at the following path:  
+**`CircaLLM_code/t1.ipynb`** for Task1
+**`CircaLLM_code/t2.ipynb`** for Task2
