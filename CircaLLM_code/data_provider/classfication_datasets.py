@@ -92,6 +92,8 @@ class DataSplit:
         self.seq_len=seq_len
         self._length=len(self.data)
         self.timesteps=self.data.shape[-1]
+
+
     def __len__(self):
         return self._length
 
@@ -175,12 +177,12 @@ class newClassificationDataset:
         Read data from files and preprocess (scaling, reshaping, etc.).
         """
         if self.data_split:
-            self.singleData, self.aperLabels, self.aper_time_stamp = load_from_tsfile(self.singleDatapath,return_meta_data=False,Realcase=self.Realcase)
+            self.singleData, self.aperLabels, self.aper_time_stamp = load_from_tsfile(self.singleDatapath, return_meta_data=False, Realcase=self.Realcase)
             # self.singleData = self._process_data(self.singleData)
             # self._length=self.singleData.shape[0]
         else:
             # Load data from respective files
-            self.train_data, self.train_labels, self.train_time_stamp = load_from_tsfile(self.train_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
+            self.train_data, self.train_labels, self.train_time_stamp = load_from_tsfile(self.train_file_path_and_name, return_meta_data=False, Realcase=self.Realcase)
             self.val_data, self.val_labels,  self.val_time_stamp = load_from_tsfile(self.val_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
             self.test_data, self.test_labels, self.test_time_stamp = load_from_tsfile(self.test_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
             # print(f'self.val_labels:{self.val_labels}')
@@ -243,7 +245,7 @@ class MultipleDataset(DataSplit):
         self.logger=logger
         self.Realcase=Realcase
         if self.data_split=="aper":
-            aperSplit="train"
+            aperSplit="test"
         else :
             aperSplit=None
         i=0
@@ -258,6 +260,7 @@ class MultipleDataset(DataSplit):
             self.datasets.append(dataset)
 
         self._merge_datasets()
+
     def _merge_datasets(self):
         """
         合并所有数据集的训练数据、标签和其他相关信息。
@@ -282,12 +285,14 @@ class MultipleDataset(DataSplit):
             time_stamp=split_data.time_stamp
 
             x_mark = np.pad(time_stamp, ((0,0),(self.seq_len - split_data.timesteps, 0),(0,0)),constant_values=0)
+
             data = np.pad(data, ((0,0),(0,0),(self.seq_len - split_data.timesteps, 0)))
 
             all_data.append(data)
             all_x_mark.append(x_mark)
             all_labels.append(labels)
             
+
         self.timesteps=split_data.timesteps
         # 将所有数据拼接成一个大的数组
         all_data = np.concatenate(all_data, axis=0)  # 按行拼接数据
@@ -304,8 +309,10 @@ class MultipleDataset(DataSplit):
         self.x_mark = all_x_mark[indices]  # 根据打乱的索引重新排序标签 
         self.num_timeseries = self.data.shape[0]  # 合并后的时间序列个数
         # self.timesteps = self.data.shape[-1]  # 每个时间序列的长度
+
     def __len__(self):
         return self.num_timeseries
+        
     def __getitem__(self, index):
         """
         Return one sample from the dataset.
@@ -396,9 +403,12 @@ class MulGroup_ClassificationDataset:
         Read data from files and preprocess (scaling, reshaping, etc.).
         """
         # Load data from respective files
-        self.train_data_1, self.train_time_stamp_1, self.train_data_2, self.train_time_stamp_2, self.train_labels = MultiGroup_load_from_tsfile(self.train_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
-        self.val_data_1, self.val_time_stamp_1, self.val_data_2, self.val_time_stamp_2, self.val_labels = MultiGroup_load_from_tsfile(self.val_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
-        self.test_data_1, self.test_time_stamp_1, self.test_data_2, self.test_time_stamp_2, self.test_labels = MultiGroup_load_from_tsfile(self.test_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
+        if self.data_split == 'test':
+            self.test_data_1, self.test_time_stamp_1, self.test_data_2, self.test_time_stamp_2, self.test_labels = MultiGroup_load_from_tsfile(self.test_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
+        else:
+            self.train_data_1, self.train_time_stamp_1, self.train_data_2, self.train_time_stamp_2, self.train_labels = MultiGroup_load_from_tsfile(self.train_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
+            self.val_data_1, self.val_time_stamp_1, self.val_data_2, self.val_time_stamp_2, self.val_labels = MultiGroup_load_from_tsfile(self.val_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
+            self.test_data_1, self.test_time_stamp_1, self.test_data_2, self.test_time_stamp_2, self.test_labels = MultiGroup_load_from_tsfile(self.test_file_path_and_name,return_meta_data=False,Realcase=self.Realcase)
 
     def _get_data(self, split):
         """

@@ -410,7 +410,7 @@ def _load_data_mulGroup(file, meta_data_1,meta_data_2,Realcas,replace_missing_va
             numbers = [int(num) for num in numbers_part.split(",")]
             label = [first_part] + numbers
         else:
-            label=[int(x) for x in label.split(",")]
+            label=[x for x in label.split(",")]
         
         channels_1,channels_2 = data_1.split(":"),data_2.split(":")
         n_cases += 1
