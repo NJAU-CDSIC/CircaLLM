@@ -16,9 +16,13 @@ The folders in the CircaLLM repository:
   
   - utils: Support utilities and tools
 
-  - pretrained: Contains pre-trained model checkpoints [Empty in GitHub - download from figshare]
+  - pretrained: Contains pre-trained model checkpoints Empty in GitHub - download from [FigShare](https://doi.org/10.6084/m9.figshare.29322500)
 
-  - assets: Stores experimental results [Empty in GitHub - download from figshare]
+  - assets: Contains experimental results (large files available on [FigShare](https://doi.org/10.6084/m9.figshare.29322500).
+ 
+  - Oscillation detection demo.ipynb: This Jupyter Notebook demonstrates oscillation detection in time-series data using a pre-trained model.
+ 
+  - Circadian variation detection demo.ipynb: This Jupyter Notebook demonstrates Circadian variation detection in time-series data using a pre-trained model.
 
 - **Simulated datasets**: Artificially generated time-series data
   - 18 specialized datasets (SynthDST-1 to SynthDST-18) for two primary tasks:
@@ -96,6 +100,6 @@ To ensure repository stability and comply with platform size limitations, critic
 ## 4.  Execute the code cell by cell in the Python interactive window
   
 Run the Jupyter notebook at the following path:  
-**`CircaLLM_code/t1.ipynb`** for Task1
+**`CircaLLM_code/Oscillation detection demo.ipynb`** for Oscillation detection
 
-**`CircaLLM_code/t2.ipynb`** for Task2
+**`CircaLLM_code/Circadian variation detection demo.ipynb`** for Circadian variation detection demo.ipynb
