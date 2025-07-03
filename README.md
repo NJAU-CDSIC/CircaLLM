@@ -102,4 +102,4 @@ To ensure repository stability and comply with platform size limitations, critic
 Run the Jupyter notebook at the following path:  
 **`CircaLLM_code/Oscillation detection demo.ipynb`** for Oscillation detection
 
-**`CircaLLM_code/Circadian variation detection demo.ipynb`** for Circadian variation detection demo.ipynb
+**`CircaLLM_code/Circadian variation detection demo.ipynb`** for Circadian variation detection
