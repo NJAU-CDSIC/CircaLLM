@@ -16,9 +16,9 @@ The folders in the CircaLLM repository:
   
   - utils: Support utilities and tools
 
-  - pretrained: Contains pre-trained model checkpoints Empty in GitHub - download from [FigShare](https://doi.org/10.6084/m9.figshare.29322500)
+  - pretrained: Contains pre-trained model checkpoints (Empty in GitHub - download from [FigShare](https://doi.org/10.6084/m9.figshare.29322500))
 
-  - assets: Contains experimental results (large files available on [FigShare](https://doi.org/10.6084/m9.figshare.29322500).
+  - assets: Contains experimental results (large files available on [FigShare](https://doi.org/10.6084/m9.figshare.29322500))
  
   - Oscillation detection demo.ipynb: This Jupyter Notebook demonstrates oscillation detection in time-series data using a pre-trained model.
  
